@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication32
+{
+     class Student   
+     {
+            int rollno,s1,s2,total;
+            string name;
+            float average;
+             
+            public void Input( )
+            {
+                Console.WriteLine("Enter the Rollno");
+                rollno = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter  the Name");
+                name =Console.ReadLine();
+                Console.WriteLine("Enter Subject1 Mark");
+                s1 = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Subject2 Mark");
+                s2 = int.Parse(Console.ReadLine());
+            }
+            public void Calculate()
+            {
+                total = s1 + s2;
+                average = total / 2;
+            }
+            public void Display()
+            {
+                Console.WriteLine("");
+                Console.WriteLine("The Total is : " + total);
+                Console.WriteLine("The Average is : " + average);
+            }
+     }
+        class program
+        {
+            static void Main(string[]args)
+            {
+                Student obj = new Student();
+                obj.Input();
+                obj.Calculate();
+                obj.Display();
+
+            }
+        }
+    }
+
+   

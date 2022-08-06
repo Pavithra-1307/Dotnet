@@ -1,0 +1,1 @@
+Lab Assignment : Write a program in C# to calculate and print the electricity bill of a given customer.

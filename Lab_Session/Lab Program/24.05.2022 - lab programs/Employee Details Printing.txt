@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication33
+{
+    class Employee
+    {
+        string name;
+        int empid;
+        int salary;
+       public Employee( )
+        {
+            name = "";
+            empid = 0;
+            salary = 0;    
+        }
+       public void Input()
+        {
+            Console.WriteLine("Enter Employee name : ");
+             name = Console.ReadLine();
+            Console.WriteLine("Enter Employee id : ");
+             empid = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Salary : ");
+             salary = int.Parse(Console.ReadLine());
+        }
+        public void Display()
+        {
+            Console.WriteLine(" <<< << < Employee Details > >> >>> ");
+            Console.WriteLine("Employee Name : " + name );
+            Console.WriteLine("Employee ID : " + empid );
+            Console.WriteLine("Employee Salary : " + salary );
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee[] s1 = new Employee [3];
+            for(int i = 0; i < s1.Length; i++)
+            {
+                s1[i] = new Employee();
+                s1[i].Input();
+            }
+            for (int i = 0; i < s1.Length; i++)
+            {
+                s1[i].Display();
+            }
+        }
+    }
+}
+   

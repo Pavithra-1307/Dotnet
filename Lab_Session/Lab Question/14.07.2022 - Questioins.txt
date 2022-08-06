@@ -1,0 +1,1 @@
+Lab Assignment : Write a program to find whether a character is consonent or vowel using switch statement.
