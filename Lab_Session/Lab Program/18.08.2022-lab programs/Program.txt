@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BookApplication
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            using(BookshopEntities entity = new BookshopEntities())
+            {
+                Booktbl tbl = new Booktbl();
+                tbl.Book_Id = 101;
+                tbl.Book_Name = "Wings Of Fire";
+                tbl.Book_Author = "Abdul Kalam";
+                tbl.Book_Price = 500;
+                entity.Booktbls.Add(tbl);
+                entity.SaveChanges();
+                Console.WriteLine("Details Added Successfully");
+
+                var query = from t in entity.Booktbls select t;
+                foreach(var item in query)
+                {
+                    Console.WriteLine("Book ID " + item.Book_Id);
+                    Console.WriteLine("Book Name " + item.Book_Name);
+                    Console.WriteLine("Book Author " + item.Book_Author);
+                    Console.WriteLine("Book price " + item.Book_Price);
+
+                }
+            }
+        }
+    }
+}
