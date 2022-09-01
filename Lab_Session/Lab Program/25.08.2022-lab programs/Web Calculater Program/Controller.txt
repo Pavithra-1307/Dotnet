@@ -1,0 +1,48 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using WebCalculater.Models;
+
+namespace WebCalculater.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+        
+        public IActionResult Index()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Index(ArithmeticOperation ao)
+        {
+            if (ao.operation == "Addition")
+            {
+                ao.Result = ao.Firstnumber + ao.Secondnumber;
+            }
+
+            if (ao.operation == "Subtraction")
+            {
+                ao.Result = ao.Firstnumber - ao.Secondnumber;
+            }
+
+            if (ao.operation == "Multiplication")
+            {
+                ao.Result = ao.Firstnumber * ao.Secondnumber;
+            }
+
+            if (ao.operation == "Division")
+            {
+                ao.Result = ao.Firstnumber / ao.Secondnumber;
+            }
+
+            return View(ao);
+        }
+
+    }
+}

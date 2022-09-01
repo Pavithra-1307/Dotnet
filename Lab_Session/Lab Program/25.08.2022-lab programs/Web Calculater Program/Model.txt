@@ -1,0 +1,10 @@
+namespace WebCalculater.Models
+{
+    public class ArithmeticOperation
+    {
+        public int Firstnumber { get; set; }
+        public int Secondnumber { get; set; }
+        public int Result { get; set; }  
+        public string operation { get; set; } 
+    }
+}

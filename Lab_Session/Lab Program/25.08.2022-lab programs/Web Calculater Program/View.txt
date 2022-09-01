@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model WebCalculater.Models.ArithmeticOperation
+@using(Html.BeginForm("Index","Home",FormMethod.Post))
+{
+    <label>Enter First Number</label>
+    @Html.Editor("Firstnumber")<br /> <br />
+    <label>Enter Second Number</label>
+    @Html.Editor("Secondnumber")<br /> <br />
+    <input type="submit" value="Addition"asp-for= "operation">
+    <input type="submit" value="Subtraction"asp-for= "operation">
+    <input type="submit" value="Multiplication"asp-for= "operation">
+    <input type="submit" value="Division"asp-for= "operation"><br /> <br />
+    <label>Result</label>
+    @Html.Display("Result")<br />
+
+}
